@@ -44,20 +44,7 @@ function joinRoom() {
   setupPeer(roomCode, false);
 }
 
-createRoom() {
-    // existing code...
-    startVideo();
-}
 
-joinRoom() {
-    // existing code...
-    startVideo();
-}
-conn.on('open', function() {
-    setupConnection();
-
-    // Make the call to the room creator
-    callPartner(conn.peer);
 });
 function setupPeer(roomCode, isHost) {
   peer = new Peer(roomCode, { debug: 2 });
