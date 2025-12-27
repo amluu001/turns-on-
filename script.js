@@ -69,12 +69,7 @@ function setupPeer(roomCode, isHost) {
     document.getElementById("jitsi").src = "https://meet.jit.si/" + roomCode;
   });
 
-  // Listen for incoming calls
-peer.on('call', function(incomingCall) {
-    incomingCall.answer(localStream); // send your video
-    incomingCall.on('stream', function(remoteStream) {
-        document.getElementById('remoteVideo').srcObject = remoteStream;
-    });
+
 });
   if (isHost) {
     peer.on('connection', connection => {
