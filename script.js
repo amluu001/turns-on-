@@ -1,15 +1,3 @@
-let localStream;
-let call;
-function startVideo() {
-  navigator.mediaDevices.getUserMedia({ video: true, audio: true })
-    .then(stream => {
-      localStream = stream;
-      document.getElementById('localVideo').srcObject = stream;
-    })
-    .catch(err => {
-      alert("Cannot access camera/mic: " + err);
-    });
-}
 // Card categories
 const cards = {
   spicy: [
@@ -82,18 +70,4 @@ function drawCard(category) {
   document.getElementById("cardText").innerText = cardText;
   // send to partner
   if (conn && conn.open) { conn.send(cardText); }
-}
-
-// Call the remote peer with your video stream
-function callPartner(remoteId) {
-    if (!localStream) {
-        alert("Start your video first!");
-        return;
-    }
-    call = peer.call(remoteId, localStream);
-
-    call.on('stream', function(remoteStream) {
-        // Show partner's video
-        document.getElementById('remoteVideo').srcObject = remoteStream;
-    });
 }
