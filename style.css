@@ -29,3 +29,15 @@ input {
   border: none;
   margin-right: 8px;
 }
+#videoSection {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#videoSection video {
+  width: 45%;
+  border-radius: 10px;
+  background: black;
+}
