@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Turns On</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- PeerJS -->
+  <script src="https://cdn.jsdelivr.net/npm/peerjs@1.4.7/dist/peerjs.min.js"></script>
+</head>
+<body>
+
+  <h1>🔥 Turns On</h1>
+
+  <div id="setup">
+    <input type="text" id="roomCode" placeholder="Enter room code">
+    <button onclick="joinRoom()">Join Room</button>
+    <button onclick="createRoom()">Create Room</button>
+  </div>
+
+  <div id="game" style="display:none;">
+    <div class="buttons">
+      <button onclick="drawCard('spicy')">🌶 Spicy</button>
+      <button onclick="drawCard('hot')">🔥 Hot</button>
+      <button onclick="drawCard('wild')">🃏 Wild</button>
+    </div>
+    <div id="card">
+      <p id="cardText">Your card will appear here</p>
+    </div>
+    <div id="video" style="margin-top:20px;">
+      <iframe id="jitsi" src="" width="100%" height="300" allow="camera; microphone" style="border:0;"></iframe>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
