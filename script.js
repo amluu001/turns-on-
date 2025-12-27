@@ -79,3 +79,17 @@ function drawCard(category) {
   // send to partner
   if (conn && conn.open) { conn.send(cardText); }
 }
+
+// Call the remote peer with your video stream
+function callPartner(remoteId) {
+    if (!localStream) {
+        alert("Start your video first!");
+        return;
+    }
+    call = peer.call(remoteId, localStream);
+
+    call.on('stream', function(remoteStream) {
+        // Show partner's video
+        document.getElementById('remoteVideo').srcObject = remoteStream;
+    });
+}
